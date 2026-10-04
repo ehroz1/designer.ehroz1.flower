@@ -63,4 +63,4 @@ spotsLeft: 5,             // сколько мест по акции остал�
 ## Шрифты
 
 - Заголовки: **Le Murmure** (Velvetyne, лицензия SIL OFL 1.1, текст лицензии лежит в `assets/fonts/LE-MURMURE-OFL.txt`).
-- Основной текст: Montserrat (Google Fonts).
+- Основной текст: Manrope (Google Fonts).
