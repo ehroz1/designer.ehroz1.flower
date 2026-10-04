@@ -1812,8 +1812,12 @@ ul, ol { padding: 0; list-style: none; }
   .hero__media > img { object-position: 72% 50%; }
   .hero__shade {
     background:
-      linear-gradient(180deg, rgba(22, 12, 20, .25) 0%, rgba(22, 12, 20, 0) 18%, rgba(22, 12, 20, 0) 34%, rgba(22, 12, 20, .5) 58%, rgba(22, 12, 20, .72) 100%);
+      linear-gradient(180deg, rgba(22, 12, 20, .3) 0%, rgba(22, 12, 20, 0) 16%, rgba(22, 12, 20, .05) 32%, rgba(22, 12, 20, .62) 50%, rgba(22, 12, 20, .82) 68%, rgba(22, 12, 20, .88) 100%);
   }
+  .hero__title { text-shadow: 0 2px 18px rgba(20, 8, 16, .55); }
+  .hero__title em { color: #FFC2DC; }
+  .hero__lead { color: rgba(255, 255, 255, .94); text-shadow: 0 1px 10px rgba(20, 8, 16, .6); }
+  .hero__eyebrow { background: rgba(30, 14, 26, .35); }
   .toast { left: 16px; right: 16px; top: 82px; width: auto; padding: 10px 12px 12px; }
   .toast__thumb { width: 40px; height: 40px; border-radius: 11px; }
   .toast__body { margin-top: 6px; }
