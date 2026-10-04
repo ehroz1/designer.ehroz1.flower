@@ -677,7 +677,8 @@ ul, ol { padding: 0; list-style: none; }
   overflow: hidden;
   background: linear-gradient(140deg, var(--blush), var(--lav-soft));
 }
-.toast__thumb svg { width: 100%; height: 100%; }
+.toast__thumb svg,
+.toast__thumb img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; }
 .toast__text { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
 .toast__text b { font-size: 14.5px; font-weight: 600; }
 .toast__text span { font-size: 13px; color: var(--ink-2); }
@@ -1027,7 +1028,8 @@ ul, ol { padding: 0; list-style: none; }
   overflow: hidden;
   background: linear-gradient(140deg, #FBE4ED, #EEE6FC);
 }
-.tg-msg__photo svg { width: 100%; height: 100%; }
+.tg-msg__photo svg,
+.tg-msg__photo img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; }
 .tg-msg__title { margin: 8px 4px 4px; font-weight: 700; font-size: 13px; }
 .tg-msg dl { display: grid; gap: 2px; padding: 0 4px; }
 .tg-msg dl div { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 6px; }
@@ -1807,6 +1809,7 @@ ul, ol { padding: 0; list-style: none; }
   .pill-cta i { width: 54px; height: 54px; }
   .link-line { font-size: 20px; }
   .hero__bouquet { width: 104vw; right: -22%; bottom: 40%; }
+  .hero__media > img { object-position: 72% 50%; }
   .hero__shade {
     background:
       linear-gradient(180deg, rgba(22, 12, 20, .25) 0%, rgba(22, 12, 20, 0) 18%, rgba(22, 12, 20, 0) 34%, rgba(22, 12, 20, .5) 58%, rgba(22, 12, 20, .72) 100%);
