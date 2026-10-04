@@ -2,10 +2,11 @@
   'use strict';
 
   const C = Object.assign({
-    name: 'Ehroz',
-    telegram: 'your_nick',
-    whatsapp: '77000000000',
-    portfolio: '#',
+    name: 'Эхроз',
+    telegram: 'ehroz_dsgn',
+    whatsapp: '77775971798',
+    phone: '77775971798',
+    instagram: 'ehroz1',
     codeword: 'Цветы',
     spotsTotal: 5,
     spotsLeft: 5,
@@ -27,7 +28,8 @@
   const links = {
     telegram: `https://t.me/${C.telegram}`,
     whatsapp: waUrl(C.codeword),
-    portfolio: C.portfolio,
+    instagram: `https://instagram.com/${C.instagram}`,
+    phone: `tel:+${C.phone}`,
   };
   const formatPhone = (d) => {
     const m = String(d).match(/^(\d)(\d{3})(\d{3})(\d{2})(\d{2})$/);
@@ -47,6 +49,8 @@
   });
   $$('[data-text="telegram"]').forEach((el) => { el.textContent = '@' + C.telegram; });
   $$('[data-text="whatsapp"]').forEach((el) => { el.textContent = formatPhone(C.whatsapp); });
+  $$('[data-text="phone"]').forEach((el) => { el.textContent = formatPhone(C.phone); });
+  $$('[data-text="instagram"]').forEach((el) => { el.textContent = '@' + C.instagram; });
   $$('[data-text="name"]').forEach((el) => { el.textContent = C.name; });
   $$('[data-year]').forEach((el) => { el.textContent = new Date().getFullYear(); });
 

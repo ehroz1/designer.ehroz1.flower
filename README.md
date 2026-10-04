@@ -19,10 +19,11 @@ assets/favicon.svg    — иконка вкладки
 Откройте `js/config.js`:
 
 ```js
-name: 'Ehroz',            // имя
-telegram: 'your_nick',    // ник в Telegram без @
-whatsapp: '77000000000',  // номер WhatsApp, только цифры
-portfolio: '#',           // ссылка на портфолио
+name: 'Эхроз',            // имя
+telegram: 'ehroz_dsgn',   // ник в Telegram без @
+whatsapp: '77775971798',  // номер WhatsApp, только цифры
+phone: '77775971798',     // телефон для звонков
+instagram: 'ehroz1',      // Instagram без @
 spotsLeft: 5,             // сколько мест по акции осталось
 ```
 
@@ -53,7 +54,7 @@ spotsLeft: 5,             // сколько мест по акции остал�
 
 1. Settings → Pages.
 2. Source: **Deploy from a branch**. Выберите ветку и папку `/ (root)`.
-3. Через минуту сайт откроется по адресу `https://ehroz1.github.io/designer.ehroz1.flower/`.
+3. Через минуту сайт откроется по адресу `https://dsgn.ehroz.picta.cc/` (домен из файла CNAME).
 
 ## Локальный просмотр
 
