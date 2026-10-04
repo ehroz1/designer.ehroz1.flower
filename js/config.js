@@ -3,7 +3,7 @@
  */
 window.SITE_CONFIG = {
   name: 'Эхроз',                 // имя в подписи, «Обо мне» и футере
-  telegram: 'ehroz_dsgn',       // ник в Telegram без @
+  telegram: 'hhrrzz1',       // ник в Telegram без @
   whatsapp: '77775971798',      // номер WhatsApp: только цифры, с кодом страны
   phone: '77775971798',         // телефон для звонков: только цифры
   instagram: 'ehroz1',          // Instagram без @

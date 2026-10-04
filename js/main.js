@@ -3,7 +3,7 @@
 
   const C = Object.assign({
     name: 'Эхроз',
-    telegram: 'ehroz_dsgn',
+    telegram: 'hhrrzz1',
     whatsapp: '77775971798',
     phone: '77775971798',
     instagram: 'ehroz1',

@@ -20,7 +20,7 @@ assets/favicon.svg    — иконка вкладки
 
 ```js
 name: 'Эхроз',            // имя
-telegram: 'ehroz_dsgn',   // ник в Telegram без @
+telegram: 'hhrrzz1',   // ник в Telegram без @
 whatsapp: '77775971798',  // номер WhatsApp, только цифры
 phone: '77775971798',     // телефон для звонков
 instagram: 'ehroz1',      // Instagram без @
