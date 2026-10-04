@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Дизайн-токены ehroz.flower — «редакционный цветочный журнал»
+   Все цвета, шрифты, размеры и отступы сайта задаются только здесь.
+   ========================================================================== */
+
+:root {
+  /* --- Цвет: один смелый цвет + почти белый + почти чёрный, без градиентов --- */
+  --c-paper: #F2EFE8;          /* почти белый, бумага */
+  --c-ink: #141312;            /* почти чёрный, краска */
+  --c-ink-muted: #5B5853;      /* вторичный текст */
+  --c-accent: #D23A1F;         /* киноварь */
+  --c-on-accent: var(--c-paper);
+  --c-on-photo: var(--c-paper);
+  --c-photo-tint: rgba(20, 19, 18, .42);  /* ровное затемнение фото под текстом */
+  --c-rule: var(--c-ink);
+  --photo-dim: .62;            /* затемнение фото, на которое ложится текст */
+
+  /* --- Шрифты --- */
+  --font-display: 'Prata', 'Times New Roman', serif;
+  --font-text: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fw-display: 400;
+  --fw-text: 400;
+  --fw-text-medium: 500;
+  --fw-text-strong: 600;
+
+  /* --- Типографическая шкала (контраст мега : текст ≈ 1 : 10) --- */
+  --fs-mega: clamp(3.3rem, 11vw, 12.5rem);   /* hero */
+  --fs-xxl: clamp(2.9rem, 8.4vw, 9rem);      /* заголовок секции */
+  --fs-xl: clamp(2.4rem, 5.6vw, 6rem);       /* крупные цифры */
+  --fs-l: clamp(1.5rem, 2.5vw, 2.6rem);      /* подзаголовок */
+  --fs-m: clamp(1.15rem, 1.5vw, 1.5rem);     /* лид */
+  --fs-body: clamp(1rem, 1.02vw, 1.0625rem);
+  --fs-small: .875rem;
+  --fs-micro: .75rem;
+
+  --lh-mega: .88;
+  --lh-head: .98;
+  --lh-sub: 1.12;
+  --lh-body: 1.55;
+
+  --track-display: -.025em;    /* плотный кернинг для крупного набора */
+  --track-text: 0;
+  --track-caps: .06em;         /* только для микроподписей капсом */
+
+  /* --- Сетка --- */
+  --grid-cols: 12;
+  --grid-gap: clamp(12px, 1.6vw, 24px);
+  --page-margin: clamp(16px, 3.2vw, 48px);
+  --page-max: 1680px;
+
+  /* --- Отступы (шкала 4px) --- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 144px;
+  --section-pad: clamp(72px, 10vw, 168px);
+
+  /* --- Линии, форма --- */
+  --rule-thin: 1px solid var(--c-rule);
+  --rule-bold: 3px solid var(--c-rule);
+  --radius: 0;
+
+  /* --- Движение --- */
+  --ease: cubic-bezier(.2, .7, .1, 1);
+  --dur-fast: .2s;
+  --dur: .45s;
+
+  /* --- Компоненты --- */
+  --nav-h: 64px;
+  --btn-h: 56px;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --grid-cols: 4;
+    --fs-mega: clamp(3rem, 15vw, 5rem);
+    --fs-xxl: clamp(2.6rem, 13vw, 4rem);
+    --nav-h: 56px;
+    --btn-h: 54px;
+  }
+}
