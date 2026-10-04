@@ -138,12 +138,32 @@
       if (cell('s')) cell('s').textContent = pad(s);
       if (febEl) {
         const fd = Math.ceil((next(1, 14, now) - now) / 864e5);
-        febEl.textContent = `${fd} ${plural(fd, 'день', 'дня', 'дней')}`;
+        febEl.textContent = ` — ${fd}\u00A0${plural(fd, 'день', 'дня', 'дней')}`;
       }
       box.classList.add('is-live');
     };
     update();
     setInterval(update, 1000);
+  });
+
+  /* Плавающая кнопка «Написать «Цветы»» на телефоне: после обложки и до контактов */
+  safe('fab', () => {
+    const fab = $('[data-fab]');
+    const hero = $('.hero');
+    const contact = $('#contact');
+    if (!fab || !hero || !contact) return;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const vh = window.innerHeight;
+      const pastHero = hero.getBoundingClientRect().bottom < vh * 0.4;
+      const beforeContact = contact.getBoundingClientRect().top > vh * 0.8;
+      fab.classList.toggle('is-shown', pastHero && beforeContact);
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
   });
 
   /* Свободные места по акции */

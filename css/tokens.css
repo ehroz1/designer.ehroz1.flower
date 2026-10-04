@@ -11,34 +11,34 @@
   --c-accent: #D23A1F;         /* киноварь */
   --c-on-accent: var(--c-paper);
   --c-on-photo: var(--c-paper);
-  --c-photo-tint: rgba(20, 19, 18, .42);  /* ровное затемнение фото под текстом */
   --c-rule: var(--c-ink);
   --photo-dim: .62;            /* затемнение фото, на которое ложится текст */
 
   /* --- Шрифты --- */
-  --font-display: 'Prata', 'Times New Roman', serif;
-  --font-text: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --fw-display: 400;
+  --font-display: 'Unbounded', 'Arial Black', sans-serif;
+  --font-text: 'Golos Text', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fw-display: 600;
+  --fw-display-light: 400;
   --fw-text: 400;
   --fw-text-medium: 500;
   --fw-text-strong: 600;
 
-  /* --- Типографическая шкала (контраст мега : текст ≈ 1 : 10) --- */
-  --fs-mega: clamp(3.3rem, 11vw, 12.5rem);   /* hero */
-  --fs-xxl: clamp(2.9rem, 8.4vw, 9rem);      /* заголовок секции */
-  --fs-xl: clamp(2.4rem, 5.6vw, 6rem);       /* крупные цифры */
-  --fs-l: clamp(1.5rem, 2.5vw, 2.6rem);      /* подзаголовок */
-  --fs-m: clamp(1.15rem, 1.5vw, 1.5rem);     /* лид */
+  /* --- Типографическая шкала (контраст мега : текст ≈ 1 : 7) --- */
+  --fs-mega: clamp(3rem, 8.6vw, 10rem);      /* hero, контакты */
+  --fs-xxl: clamp(2.2rem, 5.8vw, 6.4rem);    /* заголовок секции */
+  --fs-xl: clamp(2rem, 4.4vw, 4.8rem);       /* крупные цифры */
+  --fs-l: clamp(1.3rem, 1.9vw, 2rem);        /* подзаголовок */
+  --fs-m: clamp(1.1rem, 1.4vw, 1.4rem);      /* лид */
   --fs-body: clamp(1rem, 1.02vw, 1.0625rem);
   --fs-small: .875rem;
   --fs-micro: .75rem;
 
-  --lh-mega: .88;
-  --lh-head: .98;
-  --lh-sub: 1.12;
+  --lh-mega: .92;
+  --lh-head: 1;
+  --lh-sub: 1.15;
   --lh-body: 1.55;
 
-  --track-display: -.025em;    /* плотный кернинг для крупного набора */
+  --track-display: -.045em;    /* плотный кернинг для крупного набора */
   --track-text: 0;
   --track-caps: .06em;         /* только для микроподписей капсом */
 
@@ -79,8 +79,9 @@
 @media (max-width: 720px) {
   :root {
     --grid-cols: 4;
-    --fs-mega: clamp(3rem, 15vw, 5rem);
-    --fs-xxl: clamp(2.6rem, 13vw, 4rem);
+    --fs-mega: clamp(2.4rem, 11vw, 4rem);
+    --fs-xxl: clamp(2rem, 9.4vw, 3.2rem);
+    --fs-xl: clamp(2rem, 11vw, 3rem);
     --nav-h: 56px;
     --btn-h: 54px;
   }
