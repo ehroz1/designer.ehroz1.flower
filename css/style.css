@@ -1448,7 +1448,7 @@ ul, ol { padding: 0; list-style: none; }
   border-radius: 50% 50% var(--r-lg) var(--r-lg) / 40% 40% var(--r-lg) var(--r-lg);
   background: var(--lav-soft);
 }
-.trust__photo > img { transform: translateY(var(--py, 0)) scale(1.12); }
+.trust__photo > img { object-position: 50% 30%; transform: translateY(var(--py, 0)) scale(1.12); }
 .trust__photo figcaption {
   position: absolute;
   left: 16px;
