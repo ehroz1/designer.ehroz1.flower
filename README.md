@@ -59,3 +59,8 @@ spotsLeft: 5,             // сколько мест по акции остал�
 ## Локальный просмотр
 
 Можно просто открыть `index.html` в браузере или запустить `npx serve .`.
+
+## Шрифты
+
+- Заголовки: **Le Murmure** (Velvetyne, лицензия SIL OFL 1.1, текст лицензии лежит в `assets/fonts/LE-MURMURE-OFL.txt`).
+- Основной текст: Montserrat (Google Fonts).
