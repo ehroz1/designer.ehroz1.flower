@@ -103,6 +103,79 @@
     update();
   });
 
+  /* Лента заказов на обложке: каждые несколько секунд приходит новый */
+  safe('orders', () => {
+    const list = $('[data-orders]');
+    const countEl = $('[data-feed-count]');
+    if (!list) return;
+    const ORDERS = [
+      ['00:32', 'Корзина «Нежность» + открытка', '18 900 ₸, оплачено картой'],
+      ['01:15', 'Розы, 25 шт. — доставка к 9:00', '32 000 ₸, оплачено через Kaspi'],
+      ['02:14', 'Букет «Лавандовый закат» + шары', '27 800 ₸, оплачено через Kaspi'],
+      ['03:40', 'Пионы, 15 шт. — маме на юбилей', '41 500 ₸, оплачено картой'],
+      ['05:58', 'Монобукет из ромашек + конфеты', '14 200 ₸, оплачено через Kaspi'],
+      ['07:20', 'Букет «Утро» — доставка в офис', '22 600 ₸, оплачено через Kaspi'],
+      ['23:47', 'Букет «Пионовое облако»', '24 500 ₸, оплачено через Kaspi'],
+    ];
+    const MAX = window.innerWidth < 720 ? 2 : 3;
+    const nb = (t) => t.replace(/ (?=₸)|(?<=\d) (?=\d{3})/g, '\u00A0');
+    let i = 0;
+    let count = 1;
+
+    const make = ([time, name, sum]) => {
+      const li = document.createElement('li');
+      li.className = 'order';
+      li.innerHTML = '<span class="order__meta"></span><b class="order__name"></b><span class="order__sum"></span>';
+      li.children[0].textContent = `Новый заказ — ${time}`;
+      li.children[1].textContent = name;
+      li.children[2].textContent = nb(sum);
+      return li;
+    };
+
+    const add = () => {
+      // FLIP: запоминаем положение старых карточек до вставки новой
+      const before = new Map($$('.order', list).map((el) => [el, el.getBoundingClientRect().top]));
+      const li = make(ORDERS[i]);
+      i = (i + 1) % ORDERS.length;
+      $$('.order', list).forEach((el) => el.classList.remove('is-latest'));
+      li.classList.add('is-latest');
+      list.appendChild(li);
+
+      const items = $$('.order', list);
+      const extra = items.length - MAX;
+      items.forEach((el, k) => el.classList.toggle('is-old', k < items.length - 2));
+      if (countEl) countEl.textContent = ++count;
+
+      if (reduce || !li.animate) {
+        items.slice(0, Math.max(0, extra)).forEach((el) => el.remove());
+        return;
+      }
+      const ease = 'cubic-bezier(.2, .7, .1, 1)';
+      before.forEach((top, el) => {
+        const dy = top - el.getBoundingClientRect().top;
+        if (dy) el.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: 600, easing: ease });
+      });
+      li.animate([{ transform: 'translateY(110%)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 600, easing: ease });
+      items.slice(0, Math.max(0, extra)).forEach((el) => {
+        el.animate([{ opacity: 0.55 }, { opacity: 0, transform: 'translateY(-30%)' }], { duration: 400, easing: ease, fill: 'forwards' })
+          .onfinish = () => el.remove();
+      });
+    };
+
+    let timer = null;
+    const start = () => { if (!timer) timer = setInterval(add, 3800); };
+    const stop = () => { clearInterval(timer); timer = null; };
+    // крутится, только пока обложка на экране и вкладка открыта
+    let onScreen = !('IntersectionObserver' in window);
+    const sync = () => (onScreen && !document.hidden ? start() : stop());
+    if (!onScreen) {
+      new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; sync(); })
+        .observe(list.closest('.hero__photo') || list);
+    }
+    document.addEventListener('visibilitychange', sync);
+    sync();
+  });
+
   /* Обратный отсчёт: до 31 декабря и до 14 февраля, время Астаны (UTC+5) */
   safe('countdown', () => {
     const box = $('[data-countdown]');

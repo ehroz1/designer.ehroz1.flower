@@ -251,25 +251,44 @@ html.menu-open { overflow: hidden; }
   transform: scale(var(--reveal-scale, 1));
   transform-origin: 50% 40%;
 }
-.hero__order {
+.hero__feed {
   position: absolute;
   left: var(--page-margin);
   bottom: var(--page-margin);
+  width: min(400px, calc(100% - 2 * var(--page-margin)));
+}
+.hero__feed-head {
+  display: inline-block;
+  margin-bottom: var(--s-2);
+  padding: var(--s-1) var(--s-2);
+  background: var(--c-ink);
+  color: var(--c-paper);
+}
+.hero__orders { display: flex; flex-direction: column; gap: var(--s-2); }
+
+/* Лента заказов: новый приходит снизу, старые поднимаются и бледнеют */
+.order {
   display: grid;
   gap: var(--s-1);
-  width: min(380px, calc(100% - 2 * var(--page-margin)));
-  padding: var(--s-5);
-  background: var(--c-accent);
-  color: var(--c-on-accent);
+  padding: var(--s-4) var(--s-5);
+  background: var(--c-paper);
+  color: var(--c-ink);
   font-size: var(--fs-small);
+  transition: background var(--dur) var(--ease), color var(--dur) var(--ease);
 }
-.hero__order b {
+.order__name {
   font-family: var(--font-display);
-  font-size: var(--fs-l);
+  font-size: var(--fs-body);
   font-weight: var(--fw-display);
   line-height: var(--lh-sub);
   letter-spacing: var(--track-display);
+  transition: font-size var(--dur) var(--ease);
 }
+.order__sum { color: var(--c-ink-muted); }
+.order.is-latest { padding: var(--s-5); background: var(--c-accent); color: var(--c-on-accent); }
+.order.is-latest .order__name { font-size: var(--fs-l); }
+.order.is-latest .order__sum { color: var(--c-on-accent); }
+.order.is-old { opacity: .55; }
 
 /* ---------- 2. Проблема ---------- */
 
@@ -905,7 +924,10 @@ html.menu-open { overflow: hidden; }
   .hero__ctas .btn { min-width: 0; order: -1; }
   .hero__ctas .link { align-self: flex-start; }
   .hero__photo { height: 76svh; min-height: 440px; }
-  .hero__order { left: 0; bottom: 0; width: 100%; }
+  .hero__feed { left: 0; bottom: 0; width: 100%; }
+  .hero__feed-head { margin-left: var(--page-margin); }
+  .order:not(.is-latest) { padding-block: var(--s-3); }
+  .order:not(.is-latest) .order__sum { display: none; }
 
   .problem__title,
   .problem__lead,
