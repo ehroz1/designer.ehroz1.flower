@@ -9,6 +9,7 @@
 *::after { box-sizing: border-box; }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-h);
   -webkit-text-size-adjust: 100%;
@@ -27,7 +28,9 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-@supports (overflow: clip) { body { overflow-x: clip; } }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+/* длинное слово в крупном наборе переносится, а не распирает страницу */
+h1, h2, h3, .result p, .brands__names, .contacts b { overflow-wrap: break-word; hyphens: auto; }
 
 img { display: block; max-width: 100%; }
 a { color: inherit; }
@@ -948,7 +951,7 @@ html.menu-open { overflow: hidden; }
   .solution__caption { left: var(--page-margin); right: var(--page-margin); max-width: none; }
   .result__label,
   .result p { grid-column: 1 / -1; }
-  .result p { margin-top: var(--s-3); }
+  .result p { margin-top: var(--s-3); font-size: clamp(1.45rem, 7vw, 2rem); }
 
   .packages__head .h-section,
   .packages__head .lead { grid-column: 1 / -1; }
