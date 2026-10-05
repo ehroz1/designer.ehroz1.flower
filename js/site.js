@@ -163,7 +163,7 @@
     };
 
     let timer = null;
-    const start = () => { if (!timer) timer = setInterval(add, 3800); };
+    const start = () => { if (!timer) timer = setInterval(add, 3000); };
     const stop = () => { clearInterval(timer); timer = null; };
     // крутится, только пока обложка на экране и вкладка открыта
     let onScreen = !('IntersectionObserver' in window);
