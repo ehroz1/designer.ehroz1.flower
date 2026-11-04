@@ -1,110 +1,54 @@
 # Фотографии для сайта: промпты
 
-Положите готовые файлы в эту папку (`assets/img/`) **с точно такими именами**. Пока какого-то фото нет, сайт показывает на его месте нарисованную заглушку, поэтому фото можно добавлять по одному.
+Сайт универсальный — для любого малого и среднего бизнеса. Сейчас на нём стоят цветочные фото из первой версии; их можно заменить по одному. Сохраните новый файл в эту папку **с тем же именем**, и он сразу появится на сайте.
 
-Промпты написаны на английском, так генераторы понимают их лучше. Параметр `--ar` нужен для Midjourney. В DALL·E, Flux, Ideogram и других уберите его и выберите соотношение сторон в настройках.
+Промпты на английском. `--ar` нужен для Midjourney; в других генераторах уберите его и выберите пропорции в настройках.
 
-## Общий стиль
-
-Добавьте этот хвост к каждому промпту, кроме промптов на белом фоне (пакеты и этапы):
+## Общий стиль (добавьте к каждому промпту, кроме промптов на белом фоне)
 
 ```
-pastel palette of blush pink, lavender, peach and cream, soft diffused natural light, dreamy airy mood, shot on medium format film, Kodak Portra 400, subtle film grain, high detail, editorial photography, no text, no watermark, no logos
+editorial magazine photography, natural daylight, muted warm palette with a single vermilion red accent, shot on medium format film, subtle film grain, high detail, no text, no watermark, no logos
 ```
 
----
+## Основные фото
 
-## Основные фото (сначала эти 6)
+| Файл | Где на сайте | Пропорции | Промпт |
+| --- | --- | --- | --- |
+| `hero.jpg` | Обложка | 16:9, от 2400 px | `A small business owner's hand holding a smartphone up against a soft blue sky, the phone screen showing an incoming order notification, empty sky on the left for text, cinematic wide shot --ar 16:9` |
+| `night.jpg` | «Где бизнес теряет деньги» | 1:1 | `Night scene: a smartphone glowing with unread chat notifications lying on the counter of a closed small shop or café, chairs on tables, deep blue shadows, screen content blurred --ar 1:1` |
+| `studio.jpg` | Фон за телефоном в «Решении» | 1:1 | `Bright modern workspace of a small business owner, strongly blurred background, laptop, packed parcels and a coffee cup on a light wooden table, soft window light, creamy bokeh --ar 1:1` |
+| `offer.jpg` | Спецпредложение (тёмный блок) | 16:9 | `Cozy winter evening in a small shop window, warm golden fairy-light bokeh, gentle snowfall outside, wrapped gift boxes on the right side of the frame, festive New Year mood, dark empty space on the left for text --ar 16:9` |
+| `final.jpg` | Внизу, под контактами | 3:4 или 16:9 | `Sunny city street in Astana with small shop and café storefronts, people walking, warm afternoon light, wide calm composition --ar 16:9` |
+| `about.jpg` | «Почему мне доверяют» | 4:5 | Ваше настоящее фото (уже стоит). |
 
-### 1. `hero.jpg`: обложка, 16:9, от 2400×1350
+## Пакеты: от маленького к большому (белый фон, 1:1, от 1200 px)
 
-```
-A hand gently holding up a lush, abundant bouquet of pastel garden roses, peonies, ranunculus, cosmos, white chamomile and tiny yellow tansy flowers against a soft blue sky with fluffy pink-tinted clouds, golden hour, the bouquet fills the right half of the frame, open sky on the left and lower-left for headline text, cinematic wide shot, dreamy and romantic --ar 16:9
-```
+Белый фон обязателен — на сайте он растворяется в фоне страницы.
 
-### 2. `night.jpg`: блок «Проблема», 1:1, от 1600×1600
-
-```
-Moody night scene in a small flower shop: a smartphone lying face-up on a wooden florist workbench, its screen glowing softly with chat notifications, surrounded by scattered pink roses, eucalyptus, satin ribbons and kraft wrapping paper, deep blue shadows, the screen glow lighting up the petals, cinematic, shallow depth of field, screen content blurred and unreadable --ar 1:1
-```
-
-### 3. `studio.jpg`: фон за телефоном в блоке «Решение», 1:1, от 1600×1600
-
-```
-Bright airy florist studio in daylight, strongly blurred background, pastel bouquets in glass vases on a white marble table, pink and lavender flowers, soft window light, minimalist interior in blush tones, very shallow depth of field, creamy bokeh --ar 1:1
-```
-
-### 4. `about.jpg`: блок «Почему мне доверяют», 4:5, от 1600×2000
-
-Лучше всего подойдёт **ваше настоящее фото** в светлых тонах. Если его нет, можно сгенерировать:
-
-```
-Designer's workspace on a light wooden desk: an open laptop showing a pastel flower-shop website, a smartphone with a chat app, a small glass vase with pink peonies and sweet peas, a notebook with sketches, soft morning window light, minimal aesthetic, shallow depth of field, screen content blurred and unreadable --ar 4:5
-```
-
-### 5. `offer.jpg`: спецпредложение (тёмный блок), 16:9, от 2400×1350
-
-```
-Cozy winter evening by a frosted window: a lush bouquet of pink and white roses with eucalyptus on the windowsill on the right side of the frame, warm golden fairy-light bokeh, gentle snowfall outside, deep plum and rose tones, festive New Year mood, cinematic, dark empty space on the left for text --ar 16:9
-```
-
-### 6. `final.jpg`: арка в блоке «Контакты», 3:4, от 1500×2000
-
-```
-A dreamy secret garden path overgrown with blooming flowers — coral peonies, pink garden roses, purple campanula, lavender and white cosmos — soft morning sunlight through haze, fairy-tale atmosphere, vertical composition, lush and romantic --ar 3:4
-```
-
----
-
-## Пакеты: букет растёт от пакета к пакету (белый фон, 1:1, от 1200×1200)
-
-Белый фон обязателен: на сайте он растворяется в розовом фоне карточки.
-
-### `pack-start.jpg`: «Старт»
-
-```
-A single delicate pale-pink ranunculus bud on a long slender green stem, centered, isolated on a pure white background, studio product photography, soft natural shadow, minimalist, lots of empty space around, high detail --ar 1:1
-```
-
-### `pack-vitrina.jpg`: «Витрина»
-
-```
-A small hand-tied posy of three pastel flowers — a blush garden rose, a lavender sweet pea and a cream ranunculus — with a few green leaves, centered, isolated on a pure white background, studio product photography, soft shadow, empty space around --ar 1:1
-```
-
-### `pack-shop.jpg`: «Магазин»
-
-```
-A lush medium-size bouquet of blush garden roses, pink peonies, lavender lisianthus and peach ranunculus wrapped in light-pink tissue paper with a satin ribbon, centered, isolated on a pure white background, studio product photography, soft shadow --ar 1:1
-```
-
-### `pack-full.jpg`: «Под ключ»
-
-```
-A grand abundant floral arrangement in a white ceramic vase: cascading pink peonies, garden roses, lilac delphinium, sweet peas, cosmos and trailing greenery, centered, isolated on a pure white background, luxury studio product photography, soft shadow --ar 1:1
-```
-
----
-
-## Этапы работы: воздушные цветы как на референсе (белый фон, 1:1, от 1000×1000)
-
-Шаблон. Вместо `[FLOWER]` подставьте цветок из списка ниже:
-
-```
-Ethereal fine-art photograph of [FLOWER] floating in the center, soft motion blur and dreamy glow, petals slightly translucent, high-key, pure white background, airy, light pink and lavender tones, minimalism --ar 1:1
-```
-
-| Файл | `[FLOWER]` |
+| Файл | Промпт |
 | --- | --- |
-| `step-1.jpg` | a sprig of lilac sweet peas |
-| `step-2.jpg` | a pale pink peony bud just starting to open |
-| `step-3.jpg` | a white anemone with a soft lavender center |
-| `step-4.jpg` | a cluster of pink ranunculus |
-| `step-5.jpg` | a fully bloomed coral-pink peony |
-| `step-6.jpg` | a small bunch of lavender sprigs and white spray roses |
+| `pack-start.jpg` | `A single smartphone lying on a pure white background, screen showing a simple chat bot interface, top-down studio product photo, soft shadow, minimal --ar 1:1` |
+| `pack-vitrina.jpg` | `A laptop and a smartphone side by side on a pure white background, both showing a clean website, studio product photo, soft shadow --ar 1:1` |
+| `pack-shop.jpg` | `A laptop showing an online store, a smartphone and two neatly packed parcels with a red ribbon on a pure white background, studio product photo, soft shadow --ar 1:1` |
+| `pack-full.jpg` | `A complete small-business setup on a pure white background: laptop, tablet, smartphone, payment terminal and stacked parcels, studio product photo, soft shadow --ar 1:1` |
 
----
+## Этапы (белый фон, 1:1, от 1000 px)
 
-## Превью для мессенджеров (необязательно)
+Шаблон — вместо `[OBJECT]` подставьте предмет из таблицы:
 
-`og.jpg`, 1200×630: картинка, которая появляется, когда ссылкой делятся в Telegram или WhatsApp. Подойдёт кроп из `hero.jpg`.
+```
+Minimal studio photograph of [OBJECT] centered on a pure white background, soft shadow, high-key, one small vermilion red accent, lots of empty space --ar 1:1
+```
+
+| Файл | `[OBJECT]` |
+| --- | --- |
+| `step-1.jpg` | a smartphone on a call |
+| `step-2.jpg` | a paper sketch of a website layout with a pencil |
+| `step-3.jpg` | a signed contract with a pen |
+| `step-4.jpg` | an open laptop with code on the screen |
+| `step-5.jpg` | a paper rocket |
+| `step-6.jpg` | a headset |
+
+## Превью для мессенджеров
+
+`og.jpg`, 1200×630 — кроп из `hero.jpg`.
